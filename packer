@@ -55,6 +55,8 @@ $mergerOptions = [
 | The script starts here
 |--------------------------------------------------------------------------
 */
+exec("php -r \"file_exists('.env') || copy('.env.example', '.env');\"");
+
 $changes = false;
 
 function getComposerData() {
