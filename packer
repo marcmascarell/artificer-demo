@@ -1,0 +1,99 @@
+#!/usr/bin/env php
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| How to use
+|--------------------------------------------------------------------------
+|
+| Fill config variables and execute `php packer`
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Config
+|--------------------------------------------------------------------------
+|
+| Declaring a package:
+| 'mascame/artificer' => 'https://github.com/marcmascarell/laravel-artificer.git'
+|
+| Declaring a package with branch:
+| 'mascame/artificer' => '-b dev https://github.com/marcmascarell/laravel-artificer.git'
+|
+*/
+$packagesPath = 'workbench';
+
+$packages = [
+    'mascame/artificer' => '-b dev https://github.com/marcmascarell/laravel-artificer.git',
+    'mascame/artificer-theme' => '-b l5-migration https://github.com/marcmascarell/artificer-default-theme.git',
+    'mascame/artificer-widgets' => '-b l5-migration https://github.com/marcmascarell/artificer-widgets.git',
+    'mascame/formality' => 'https://github.com/marcmascarell/formality.git',
+    'mascame/arrayer' => 'https://github.com/marcmascarell/arrayer.git',
+    'mascame/extender' => 'https://github.com/marcmascarell/extender.git',
+    'mascame/artificer-logreader-plugin' => '-b l5-migration https://github.com/marcmascarell/artificer-logreader-plugin.git',
+    'mascame/artificer-pagination-plugin' => '-b l5-migration https://github.com/marcmascarell/artificer-pagination-plugin.git',
+
+    // New since the l5 version (so no -b)
+    'mascame/artificer-login-plugin' => 'https://github.com/marcmascarell/artificer-login-plugin.git',
+];
+
+$mergerOptions = [
+    "include" => [
+    ],
+    "require" => [
+        $packagesPath . "/*/*/composer.json"
+    ],
+    "recurse" => true,
+    "replace" => true,
+    "merge-dev" => true,
+    "merge-extra" => false
+];
+
+/*
+|--------------------------------------------------------------------------
+| The script starts here
+|--------------------------------------------------------------------------
+*/
+$changes = false;
+
+function getComposerData() {
+    $composer = file_get_contents("composer.json");
+    return json_decode($composer, true);    
+}
+
+$composer = getComposerData();
+
+// Does the merger plugin exist?
+if (! isset($composer['extra']["merge-plugin"])) {
+    exec('composer require wikimedia/composer-merge-plugin --dev');
+
+    $composer = getComposerData();
+
+    if (! isset($composer['extra'])) {
+        $composer['extra'] = [];
+    }
+    
+    $changes = true;
+        
+    $composer['extra']["merge-plugin"] = $mergerOptions;
+
+    file_put_contents("composer.json", json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+}
+
+// Does the package exist?
+foreach ($packages as $path => $repository) {
+    $packagePath = $packagesPath . DIRECTORY_SEPARATOR . $path;
+
+    if (file_exists($packagePath)) continue;
+
+    $changes = true;
+
+    exec("git clone {$repository} {$packagePath}");
+}
+
+if ($changes) {
+    exec("composer update");
+}
+
+print "\033[32mPacker: All done.\033[0m\n";
