@@ -14,7 +14,7 @@ class ArtificerUsersSeeder extends Seeder
         $model = new \Mascame\Artificer\Model\FakeModel();
 
         $model->setup([
-            'table' => 'artificer_users'
+            'table' => 'artificer_users',
         ]);
 
         $model->unguard();

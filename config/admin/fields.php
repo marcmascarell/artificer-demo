@@ -1,7 +1,6 @@
 <?php
 
 use \Mascame\Artificer\Fields\Types as ArtificerTypes;
-use \Mascame\Formality\Types as DefaultTypes;
 
 return [
 
@@ -18,8 +17,8 @@ return [
         // field_type => ['fieldname_1', 'fieldname_1')
         'key' => [
             'autodetect' => [
-                'id'
-            ]
+                'id',
+            ],
         ],
 
         'published' => [],
@@ -38,7 +37,7 @@ return [
 
         'password' => [
             'autodetect' => [
-                'password'
+                'password',
             ],
         ],
 
@@ -46,24 +45,24 @@ return [
             'autodetect' => [
                 'title',
                 'username',
-                'name'
+                'name',
             ],
         ],
 
         'textarea' => [
             'autodetect' => [
-                'description'
+                'description',
             ],
 
             'widgets' => [
                 \Mascame\Artificer\Widgets\CKeditor::class,
-            ]
+            ],
         ],
 
         'wysiwyg' => [
             'autodetect' => [
                 'body',
-                'text'
+                'text',
             ],
         ],
 
@@ -78,7 +77,7 @@ return [
 
         'link' => [
             'autodetect' => [
-                'url'
+                'url',
             ],
         ],
 
@@ -95,35 +94,35 @@ return [
                 '/_on$/',
             ],
 
-            "attributes" => [
+            'attributes' => [
                 'class' => 'form-control',
             ],
 
             'widgets' => [
                 \Mascame\Artificer\Widgets\DateTimepicker::class,
-            ]
+            ],
 
         ],
 
         'date' => [
             'autodetect' => [
-                '_at'
+                '_at',
             ],
 
-            "attributes" => [
+            'attributes' => [
                 'class' => 'form-control',
             ],
 
             'widgets' => [
                 \Mascame\Artificer\Widgets\DateTimepicker::class,
-            ]
+            ],
         ],
 
         'file' => [],
 
         'image' => [
             'autodetect' => [
-                'image'
+                'image',
             ],
         ],
 
@@ -131,14 +130,14 @@ return [
             'autodetect' => [
                 '_id',
                 'user_id',
-                'fake_id'
+                'fake_id',
             ],
         ],
 
         'hasMany' => [],
 
         'default' => [
-            'type' => 'text'
-        ]
+            'type' => 'text',
+        ],
     ],
 ];

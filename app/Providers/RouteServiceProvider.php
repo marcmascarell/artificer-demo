@@ -60,24 +60,20 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::group([
 //            'middleware' => 'web',
-            'prefix' => 'test'
+            'prefix' => 'test',
         ], function ($router) {
-
             Route::group([
                 'middleware' => ['web'],
-                'prefix' => 'coconut'
+                'prefix' => 'coconut',
             ], function ($router) {
-
                 Route::get('/', function () {
-                    return "coconut";
+                    return 'coconut';
                 })->middleware('web');
-
             });
 
             Route::get('/', function () {
-                return "xaxaxa";
+                return 'xaxaxa';
             });
-
         });
     }
 
