@@ -2,11 +2,11 @@
 
 return [
 
-	'title' => 'Artificer',
-	
-	'route_prefix' => 'admin',
+    'title' => 'Artificer',
 
-	'theme' => 'artificer-default-theme',
+    'route_prefix' => 'admin',
+
+    'theme' => 'artificer-default-theme',
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     ],
 
     'commands' => [
-        Mascame\Artificer\Commands\ModalConfigGenerator::class
+        Mascame\Artificer\Commands\ModalConfigGenerator::class,
     ],
 
     /*
@@ -54,7 +54,7 @@ return [
 
         'database' => [
             'connection' => env('DB_CONNECTION', 'mysql'),
-            'table' => 'artificer_extensions'
+            'table' => 'artificer_extensions',
         ],
 
     ],
@@ -88,20 +88,20 @@ return [
     | Icons used by the app
     |--------------------------------------------------------------------------
     */
-	
+
     'icons' => [
-	    'edit' => 'fa fa-pencil',
-		'dashboard' => 'fa fa-dashboard',
-		'delete' => 'fa fa-remove',
-		'filter' => 'fa fa-filter',
-		'info' => 'fa fa-info',
-		'models' => 'fa fa-th',
-		'new' => 'fa fa-plus',
-		'save' => 'fa fa-save',
-		'search' => 'fa fa-search',
-		'show' => 'fa fa-eye',
-		'sort-up' => 'fa fa-long-arrow-up',
-	    'sort-down' => 'fa fa-long-arrow-down',
-	    'extension' => 'fa fa-plug'
-    ]
+        'edit' => 'fa fa-pencil',
+        'dashboard' => 'fa fa-dashboard',
+        'delete' => 'fa fa-remove',
+        'filter' => 'fa fa-filter',
+        'info' => 'fa fa-info',
+        'models' => 'fa fa-th',
+        'new' => 'fa fa-plus',
+        'save' => 'fa fa-save',
+        'search' => 'fa fa-search',
+        'show' => 'fa fa-eye',
+        'sort-up' => 'fa fa-long-arrow-up',
+        'sort-down' => 'fa fa-long-arrow-down',
+        'extension' => 'fa fa-plug',
+    ],
 ];

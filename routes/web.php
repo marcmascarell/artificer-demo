@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-//    \Session::put('me cago', 'en doto');
+    //    \Session::put('me cago', 'en doto');
 //    dd(\Session::all());
 
 //    dd(get_parent_class(\Mascame\Artificer\ArtificerServiceProvider::class));

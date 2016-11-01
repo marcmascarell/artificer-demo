@@ -2,14 +2,14 @@
 
 return [
 
-    /**
+    /*
      * Specify where models live
      */
     'directories' => [
         // '\\App\\Models' => app_path() . '/Models',
     ],
 
-    /**
+    /*
      * You can also specify models individually
      */
     'models' => [
@@ -17,7 +17,7 @@ return [
         \App\Test::class,
     ],
 
-    /**
+    /*
      * Models that will not be shown in menu (Example: BookAttribute)
      *
      * Useful when you are using directory model scan.
@@ -34,7 +34,7 @@ return [
         'admin.model.all'     => 'view',
     ],
 
-    /**
+    /*
      * All model configs will use this defaults (Merging)
      */
     'default' => [
@@ -67,14 +67,14 @@ return [
 
         // Fields that will be shown when on detailed item view mode
         'show' => [
-            'visible' => ['*']
+            'visible' => ['*'],
         ],
 
         'fields' => [],
 
         // Attributes of fields, applied unless field has attributes
         'attributes' => [
-            'class' => 'form-control'
-        ]
-    ]
+            'class' => 'form-control',
+        ],
+    ],
 ];

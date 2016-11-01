@@ -1,9 +1,11 @@
-<?php namespace App\Mascame;
+<?php
+
+namespace App\Mascame;
 
 use Illuminate\Support\ServiceProvider;
 
-class HelloWorldPluginServiceProvider extends ServiceProvider {
-
+class HelloWorldPluginServiceProvider extends ServiceProvider
+{
     public $package = 'mascame/helloworld';
 
     /**
@@ -41,7 +43,6 @@ class HelloWorldPluginServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return array();
+        return [];
     }
-
 }

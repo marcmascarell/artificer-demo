@@ -2,29 +2,29 @@
 
 return [
 
-    /**
+    /*
      * Model title
      */
-    'title' => "User",
+    'title' => 'User',
 
-    /**
+    /*
      * The fields
      */
-	'fields' => [
-		'id' => [
-			'title' => 'test'
-		],
+    'fields' => [
+        'id' => [
+            'title' => 'test',
+        ],
         'email' => [
-            'wiki' => 'Correo del usuario'
-        ]
-	],
+            'wiki' => 'Correo del usuario',
+        ],
+    ],
 
     'guarded' => [
-        'id'
+        'id',
     ],
 
     'rules' => [
-        'name' => 'required'
+        'name' => 'required',
     ],
 
 

@@ -2,18 +2,18 @@
 
 return [
 
-	/**
-	 * Keys are useless
-	 */
-	
-	'dashboard' => [
-		'route'  => 'admin.home',
-		'title' => 'Dashboard',
-		'icon'  => '<i class="fa fa-dashboard"></i>',
-		'permissions' => [
-			'admin'
-		]
-	],
+    /*
+     * Keys are useless
+     */
+
+    'dashboard' => [
+        'route'  => 'admin.home',
+        'title' => 'Dashboard',
+        'icon'  => '<i class="fa fa-dashboard"></i>',
+        'permissions' => [
+            'admin',
+        ],
+    ],
 
     'extensions'   => [
         'route'  => 'admin.extensions',
@@ -21,8 +21,8 @@ return [
         'icon'  => '<i class="fa fa-plug"></i>',
         'permissions' => [
             'admin',
-            'user'
-        ]
+            'user',
+        ],
     ],
 
 ];
