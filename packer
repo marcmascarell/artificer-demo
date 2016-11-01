@@ -36,6 +36,7 @@ $packages = [
 
     // New since the l5 version (so no -b)
     'mascame/artificer-login-plugin' => 'https://github.com/marcmascarell/artificer-login-plugin.git',
+    'mascame/hooky' => 'https://github.com/marcmascarell/hooky.git',
 ];
 
 $mergerOptions = [

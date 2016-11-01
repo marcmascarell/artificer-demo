@@ -20,12 +20,11 @@ return [
 	],
 
     'guarded' => [
-        'id',
-        'password'
+        'id'
     ],
 
     'rules' => [
-        'remember_token' => 'required'
+        'name' => 'required'
     ],
 
 
