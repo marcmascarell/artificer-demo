@@ -8,3 +8,4 @@ Homestead.json
 composer.lock
 workbench/*
 !workbench/.gitkeep
+_ide_helper.php
