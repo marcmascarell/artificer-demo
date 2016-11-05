@@ -176,7 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        \Mascame\Artificer\ArtificerServiceProvider::class
+        \Mascame\Artificer\ArtificerServiceProvider::class,
     ],
 
     /*

@@ -1,11 +1,12 @@
-<?php namespace App\Mascame;
+<?php
 
+namespace App\Mascame;
 
 use Mascame\Artificer\Artificer;
 use Mascame\Artificer\Plugin\AbstractPlugin;
 
-class HelloWorldPlugin extends AbstractPlugin {
-
+class HelloWorldPlugin extends AbstractPlugin
+{
     public $version = '1.0';
     public $name = 'Hello World!';
     public $description = 'The Hello World Plugin';
@@ -14,21 +15,23 @@ class HelloWorldPlugin extends AbstractPlugin {
 
     /**
      * Artificer does not know about your constructor so you
-     * can inject any dependency you need
+     * can inject any dependency you need.
      */
-    public function __construct() {
-
+    public function __construct()
+    {
     }
 
-    public function getRoutes() {
+    public function getRoutes()
+    {
         \Route::get('hello-world', [
             'as' => 'admin.plugin.helloworld',
-        ], function() {
-            return "Hello World!";
+        ], function () {
+            return 'Hello World!';
         });
     }
 
-    public function getMenu() {
+    public function getMenu()
+    {
         return [
             [
                 'route'  => 'admin.plugin.helloworld',
@@ -36,32 +39,32 @@ class HelloWorldPlugin extends AbstractPlugin {
                 'icon'  => '<i class="fa fa-graduation-cap"></i>',
                 'permissions' => [
                     'admin',
-                    'user'
-                ]
-            ]
+                    'user',
+                ],
+            ],
         ];
     }
 
     /**
-     * This will be called if the plugin is installed
+     * This will be called if the plugin is installed.
      */
     public function boot()
     {
     }
 
     /**
-     * This will be called when plugin is installed
+     * This will be called when plugin is installed.
      */
-    public function install() {
+    public function install()
+    {
         // Maybe some table creation
     }
 
     /**
-     * This will be called when plugin is uninstalled
+     * This will be called when plugin is uninstalled.
      */
-    public function uninstall() {
+    public function uninstall()
+    {
         // Maybe some table drop or cleanup
     }
-
-
 }

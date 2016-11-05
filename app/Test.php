@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class Test extends \Illuminate\Database\Eloquent\Model
 {
     /**
@@ -14,7 +13,7 @@ class Test extends \Illuminate\Database\Eloquent\Model
 //    ];
 
     protected $guarded = [
-        'pocoyo'
+        'pocoyo',
     ];
 
     /**
