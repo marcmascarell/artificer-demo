@@ -2,8 +2,8 @@
 
 namespace App\Mascame;
 
-use Closure;
 use Auth;
+use Closure;
 
 class ArtificerAuth
 {
