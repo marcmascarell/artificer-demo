@@ -20,23 +20,23 @@ class CreateArtificerTestTable extends Migration
             $table->decimal('amount', 5, 2);
             $table->double('column', 15, 8);
             $table->enum('choices', ['foo', 'bar']);
-            $table->float('amount_bos');
-            $table->integer('votes');
-            $table->ipAddress('visitor_ip');
-            $table->json('options');
-            $table->macAddress('device');
-            $table->mediumInteger('numbers');
-            $table->morphs('taggable');
-            $table->rememberToken();
-            $table->string('email');
-            $table->string('name', 100);
-            $table->text('description');
-            $table->time('sunrise_time');
-            $table->timestamp('added_on');
-            $table->timestamps();
-            $table->uuid('uid');
+//            $table->float('amount_bos');
+//            $table->integer('votes');
+//            $table->ipAddress('visitor_ip');
+//            $table->json('options');
+//            $table->macAddress('device');
+//            $table->mediumInteger('numbers');
+//            $table->morphs('taggable');
+//            $table->rememberToken();
+//            $table->string('email');
+//            $table->string('name', 100);
+//            $table->text('description');
+//            $table->time('sunrise_time');
+//            $table->timestamp('added_on');
+//            $table->timestamps();
+//            $table->uuid('uid');
 
-            $table->integer('user_id')->references('id')->on('users');
+//            $table->integer('user_id')->references('id')->on('users');
         });
     }
 

@@ -31,6 +31,10 @@ return [
                 'activated',
                 'confirmed',
             ],
+
+            'widgets' => [
+                \Mascame\Artificer\Widgets\Icheck::class,
+            ],
         ],
 
         'custom' => [],
@@ -70,6 +74,11 @@ return [
             'autodetect' => [
                 'option',
                 'selection',
+                'genre',
+            ],
+
+            'widgets' => [
+                \Mascame\Artificer\Widgets\Icheck::class,
             ],
         ],
 
@@ -94,23 +103,28 @@ return [
                 '/_on$/',
             ],
 
-            'attributes' => [
-                'class' => 'form-control',
-            ],
-
             'widgets' => [
                 \Mascame\Artificer\Widgets\DateTimepicker::class,
             ],
 
         ],
 
+        'select' => [
+            'autodetect' => [
+                'tags',
+                'choices',
+            ],
+
+            'class' => 'res',
+
+            'widgets' => [
+                \Mascame\Artificer\Widgets\Select2::class,
+            ],
+        ],
+
         'date' => [
             'autodetect' => [
                 '_at',
-            ],
-
-            'attributes' => [
-                'class' => 'form-control',
             ],
 
             'widgets' => [

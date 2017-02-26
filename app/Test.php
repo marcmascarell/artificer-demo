@@ -4,6 +4,8 @@ namespace App;
 
 class Test extends \Illuminate\Database\Eloquent\Model
 {
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *

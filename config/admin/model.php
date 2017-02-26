@@ -15,6 +15,8 @@ return [
     'models' => [
         \App\User::class,
         \App\Test::class,
+        \Mascame\Artificer\Model\Permission\Role::class,
+        \Mascame\Artificer\Model\Permission\Permission::class,
     ],
 
     /*
